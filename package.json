@@ -1,0 +1,19 @@
+{
+  "name": "ES6Demos",
+  "version": "1.0.0",
+  "description": "Used for ES6 Demos",
+  "author": "Dan Wahlin",
+  "engines": {
+    "node": ">=0.10.28"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-6to5": "^1.0.1",
+    "gulp-concat": "^2.4.1",
+    "gulp-plumber": "^0.6.5",
+    "gulp-traceur": "^0.13.0",
+    "gulp-typescript": "^2.0.0",
+    "gulp-uglify": "^1.0.1",
+    "traceur": "0.0.66"
+  }
+}
