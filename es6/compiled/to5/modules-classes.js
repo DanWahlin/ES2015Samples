@@ -72,7 +72,6 @@ var Car = (function (Auto) {
     start: {
       writable: true,
       value: function () {
-        //Use a template string
         if (this._isElectric) {
           return this.make + " " + this.model + " with a " + this.engine + " (electric) engine is started!";
         }
