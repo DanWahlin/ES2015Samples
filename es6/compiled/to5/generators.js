@@ -1,3 +1,4 @@
+//Simple generator that returns 3 items on demand
 "use strict";
 
 var numberGenerator = regeneratorRuntime.mark(function numberGenerator() {
@@ -21,8 +22,9 @@ var numberGenerator = regeneratorRuntime.mark(function numberGenerator() {
   }, numberGenerator, this);
 });
 
-var infiniteNumbers = regeneratorRuntime.mark( //3
+var infiniteNumbers = regeneratorRuntime.mark( //{value: undefined, done: true}
 
+//Create a generator that returns infinite numbers
 function infiniteNumbers() {
   var i;
   return regeneratorRuntime.wrap(function infiniteNumbers$(context$1$0) {
@@ -48,7 +50,10 @@ function infiniteNumbers() {
   }, infiniteNumbers, this);
 });
 
-var take = regeneratorRuntime.mark(function take(coll, number) {
+var take = regeneratorRuntime.mark(
+
+//Create a generator that can take a specific amount from a collection
+function take(coll, number) {
   var i, _iterator, _step;
   return regeneratorRuntime.wrap(function take$(context$1$0) {
     while (1) switch (context$1$0.prev = context$1$0.next) {
@@ -68,7 +73,7 @@ var take = regeneratorRuntime.mark(function take(coll, number) {
           context$1$0.next = 6;
           break;
         }
-        return context$1$0.abrupt("break", 10);
+        return context$1$0.abrupt("return");
 
       case 6:
         context$1$0.next = 8;
@@ -85,10 +90,11 @@ var take = regeneratorRuntime.mark(function take(coll, number) {
 });
 
 var number = numberGenerator();
-console.log(number.next().value); //1
-console.log(number.next().value); //2
-console.log(number.next().value);
-for (var _iterator2 = take(infiniteNumbers(), 100)[Symbol.iterator](), _step2; !(_step2 = _iterator2.next()).done;) {
+console.log(number.next()); //{value: 1, done: false}
+console.log(number.next()); //{value: 2, done: false}
+console.log(number.next()); //{value: 3, done: true}
+console.log(number.next());
+for (var _iterator2 = take(infiniteNumbers(), 10)[Symbol.iterator](), _step2; !(_step2 = _iterator2.next()).done;) {
   var number = _step2.value;
 
   console.log(number);

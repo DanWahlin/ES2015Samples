@@ -33,9 +33,10 @@ function numberGenerator() {
   }, $__2, this);
 }
 var number = numberGenerator();
-console.log(number.next().value);
-console.log(number.next().value);
-console.log(number.next().value);
+console.log(number.next());
+console.log(number.next());
+console.log(number.next());
+console.log(number.next());
 function infiniteNumbers() {
   var i;
   return $traceurRuntime.createGeneratorInstance(function($ctx) {
@@ -87,7 +88,10 @@ function take(coll, number) {
           $ctx.state = 9;
           break;
         case 9:
-          $ctx.state = (number === i++) ? -2 : 2;
+          $ctx.state = (number === i++) ? 1 : 2;
+          break;
+        case 1:
+          $ctx.state = -2;
           break;
         case 2:
           $ctx.state = 5;
@@ -101,7 +105,7 @@ function take(coll, number) {
       }
   }, $__4, this);
 }
-for (var $__0 = take(infiniteNumbers(), 100)[Symbol.iterator](),
+for (var $__0 = take(infiniteNumbers(), 10)[Symbol.iterator](),
     $__1; !($__1 = $__0.next()).done; ) {
   var number = $__1.value;
   {

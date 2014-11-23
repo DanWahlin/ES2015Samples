@@ -6,9 +6,12 @@ function* numberGenerator() {
 }
 
 var number = numberGenerator();
-console.log(number.next().value); //1
-console.log(number.next().value); //2
-console.log(number.next().value); //3
+console.log(number.next()); //{value: 1, done: false}
+console.log(number.next()); //{value: 2, done: false}
+console.log(number.next()); //{value: 3, done: true}
+console.log(number.next()); //{value: undefined, done: true}
+
+
 
 //Create a generator that returns infinite numbers
 function* infiniteNumbers() {
@@ -30,6 +33,6 @@ function* take(coll, number) {
 }
 
 //Use the generators to grab 100 numbers
-for (var number of take(infiniteNumbers(), 100)) {
+for (var number of take(infiniteNumbers(), 10)) {
 	console.log(number);
 }
