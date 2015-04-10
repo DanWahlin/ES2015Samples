@@ -1,14 +1,14 @@
-"use strict";
+'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var key in props) { var prop = props[key]; prop.configurable = true; if (prop.value) prop.writable = true; } Object.defineProperties(target, props); } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
 
-var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var myLogger = function (msg) {
+var myLogger = function myLogger(msg) {
     return console.log(msg);
 }; //Creates an anonymous function
 
-myLogger("Testing out arrow functions!");
+myLogger('Testing out arrow functions!');
 
 //Working with "this" the "old" way
 function Car() {
@@ -31,17 +31,16 @@ var CarWithArrow = (function () {
         this._seats = 6;
     }
 
-    _createClass(CarWithArrow, {
-        timeout: {
-            value: function timeout() {
-                var _this = this;
+    _createClass(CarWithArrow, [{
+        key: 'timeout',
+        value: function timeout() {
+            var _this = this;
 
-                setTimeout(function () {
-                    console.log(_this._seats++);
-                }, 1000);
-            }
+            setTimeout(function () {
+                console.log(_this._seats++);
+            }, 1000);
         }
-    });
+    }]);
 
     return CarWithArrow;
 })();

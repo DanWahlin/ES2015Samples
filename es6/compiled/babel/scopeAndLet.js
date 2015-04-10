@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var age = 55;
 
@@ -9,5 +9,5 @@ for (var _i = 0; _i < 5; _i++) {
 try {
     console.log(i);
 } catch (e) {
-    console.log("i is out of scope due to using let!");
+    console.log('i is out of scope due to using let!');
 }

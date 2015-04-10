@@ -1,10 +1,10 @@
-"use strict";
+'use strict';
 
-var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { var _arr = []; for (var _iterator = arr[Symbol.iterator](), _step; !(_step = _iterator.next()).done;) { _arr.push(_step.value); if (i && _arr.length === i) break; } return _arr; } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } };
+var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } };
 
-var _createClass = (function () { function defineProperties(target, props) { for (var key in props) { var prop = props[key]; prop.configurable = true; if (prop.value) prop.writable = true; } Object.defineProperties(target, props); } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
 
-var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 //Using Map
 
@@ -15,73 +15,72 @@ var Departments = (function () {
         this._depts = new Map();
     }
 
-    _createClass(Departments, {
-        addDepartment: {
-            value: function addDepartment(key, desc) {
-                if (!this._depts.has(key)) {
-                    this._depts.set(key, desc);
-                } else {
-                    console.log("Duplicate department was blocked: " + key);
-                }
-            }
-        },
-        getDepartment: {
-            value: function getDepartment(key) {
-                return this._depts.get(key);
-            }
-        },
-        removeDepartment: {
-            value: function removeDepartment(key) {
-                this._depts["delete"](key);
-            }
-        },
-        clearDepartments: {
-            value: function clearDepartments() {
-                this._depts.clear();
-            }
-        },
-        getAll: {
-            value: function getAll() {
-                return this._depts;
+    _createClass(Departments, [{
+        key: 'addDepartment',
+        value: function addDepartment(key, desc) {
+            if (!this._depts.has(key)) {
+                this._depts.set(key, desc);
+            } else {
+                console.log('Duplicate department was blocked: ' + key);
             }
         }
-    });
+    }, {
+        key: 'getDepartment',
+        value: function getDepartment(key) {
+            return this._depts.get(key);
+        }
+    }, {
+        key: 'removeDepartment',
+        value: function removeDepartment(key) {
+            this._depts['delete'](key);
+        }
+    }, {
+        key: 'clearDepartments',
+        value: function clearDepartments() {
+            this._depts.clear();
+        }
+    }, {
+        key: 'getAll',
+        value: function getAll() {
+            return this._depts;
+        }
+    }]);
 
     return Departments;
 })();
 
 //Simple example of Map
 var map = new Map();
-map.set("Finance", "Process bills");
-map.set("HR", "Human Resources and Healthcare");
-map.set("HR", "Human Resources and Healthcare"); //Duplicate ignored
-console.log("Getting HR: " + map.get("HR"));
+map.set('Finance', 'Process bills');
+map.set('HR', 'Human Resources and Healthcare');
+map.set('HR', 'Human Resources and Healthcare'); //Duplicate ignored
+console.log('Getting HR: ' + map.get('HR'));
 console.log(map.size);
 
-if (map.has("Finance")) console.log("Found it!");
-map["delete"]("Finance"); //Delete single item
+if (map.has('Finance')) console.log('Found it!');
+map['delete']('Finance'); //Delete single item
 map.clear(); //Clear all items
 
-console.log("\n");
+console.log('\n');
 //No duplicate values allowed due to using Set
 var depts = new Departments();
-depts.addDepartment("Finance", "Process bills");
-depts.addDepartment("HR", "Human Resources and Healthcare");
-depts.addDepartment("Finance", "Process the bills");
+depts.addDepartment('Finance', 'Process bills');
+depts.addDepartment('HR', 'Human Resources and Healthcare');
+depts.addDepartment('Finance', 'Process the bills');
 
 var all = depts.getAll();
 
 //Iterate through the set
 all.forEach(function (val, key) {
-    console.log("Found department using forEach " + key + ": " + val);
+    console.log('Found department using forEach ' + key + ': ' + val);
 });
 
-console.log("\n");
+console.log('\n');
 all.forEach(function (val, key) {
-    return console.log(key + ": " + val);
+    return console.log(key + ': ' + val);
 });
 
-console.log("\n");
+console.log('\n');
 var _iteratorNormalCompletion = true;
 var _didIteratorError = false;
 var _iteratorError = undefined;
@@ -93,15 +92,15 @@ try {
         var key = _step$value[0];
         var val = _step$value[1];
 
-        console.log("Found department using for of loop: " + key + ": " + val);
+        console.log('Found department using for of loop: ' + key + ': ' + val);
     }
 } catch (err) {
     _didIteratorError = true;
     _iteratorError = err;
 } finally {
     try {
-        if (!_iteratorNormalCompletion && _iterator["return"]) {
-            _iterator["return"]();
+        if (!_iteratorNormalCompletion && _iterator['return']) {
+            _iterator['return']();
         }
     } finally {
         if (_didIteratorError) {
@@ -110,7 +109,7 @@ try {
     }
 }
 
-console.log("\nFinding specific HR key : " + depts.getDepartment("HR"));
+console.log('\nFinding specific HR key : ' + depts.getDepartment('HR'));
 
 depts.clearDepartments();
-console.log("\nClearing all departments: Size is now: " + depts.getAll().size);
+console.log('\nClearing all departments: Size is now: ' + depts.getAll().size);
