@@ -8,7 +8,8 @@
   },
   "devDependencies": {
     "gulp": "^3.8.8",
-    "gulp-6to5": "^1.0.1",
+    "babel": "^4.7.16",
+    "gulp-babel": "^4.0.1",
     "gulp-concat": "^2.4.1",
     "gulp-plumber": "^0.6.5",
     "gulp-traceur": "^0.13.0",
