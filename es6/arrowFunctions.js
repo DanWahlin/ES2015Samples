@@ -10,6 +10,7 @@ function Car() {
     this.timeout = function() {
         setTimeout(function() {
             console.log(self._seats++);
+            self.timeout();
         }, 1000);
     }
 }
@@ -24,6 +25,7 @@ class CarWithArrow {
     timeout() {
         setTimeout(() => {
             console.log(this._seats++);
+            this.timeout();
         }, 1000);
     }
 }
