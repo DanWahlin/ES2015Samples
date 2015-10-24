@@ -1,27 +1,7 @@
 "use strict";
 var age = 55;
-{
-  try {
-    throw undefined;
-  } catch ($i) {
-    {
-      $i = 0;
-      for (; $i < 5; $i++) {
-        try {
-          throw undefined;
-        } catch (i) {
-          {
-            i = $i;
-            try {
-              age += 5;
-            } finally {
-              $i = i;
-            }
-          }
-        }
-      }
-    }
-  }
+for (var i = 0; i < 5; i++) {
+  age += 5;
 }
 try {
   console.log(i);

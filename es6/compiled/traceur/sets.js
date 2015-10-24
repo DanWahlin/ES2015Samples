@@ -1,25 +1,27 @@
 "use strict";
-var Departments = function Departments() {
-  this._depts = new Set();
-};
-($traceurRuntime.createClass)(Departments, {
-  addDepartment: function(dept) {
-    if (!this._depts.has(dept)) {
-      this._depts.add(dept);
-    } else {
-      console.log('Duplicate department was blocked: ' + dept);
-    }
-  },
-  removeDepartment: function(dept) {
-    this._depts.delete(dept);
-  },
-  clearDepartments: function() {
-    this._depts.clear();
-  },
-  getSet: function() {
-    return this._depts;
+var Departments = function() {
+  function Departments() {
+    this._depts = new Set();
   }
-}, {});
+  return ($traceurRuntime.createClass)(Departments, {
+    addDepartment: function(dept) {
+      if (!this._depts.has(dept)) {
+        this._depts.add(dept);
+      } else {
+        console.log('Duplicate department was blocked: ' + dept);
+      }
+    },
+    removeDepartment: function(dept) {
+      this._depts.delete(dept);
+    },
+    clearDepartments: function() {
+      this._depts.clear();
+    },
+    getSet: function() {
+      return this._depts;
+    }
+  }, {});
+}();
 var set = new Set();
 set.add('HR');
 set.add('Finance');
@@ -42,20 +44,32 @@ allDepts.forEach(function(dept) {
   console.log('Found department using forEach ' + dept);
 });
 console.log('\n');
-allDepts.forEach((function(dept) {
+allDepts.forEach(function(dept) {
   return console.log('Found department using forEach ' + 'with arrow function: ' + dept);
-}));
+});
 console.log('\n');
-for (var $__1 = allDepts[Symbol.iterator](),
-    $__2; !($__2 = $__1.next()).done; ) {
-  try {
-    throw undefined;
-  } catch (dept) {
+var $__5 = true;
+var $__6 = false;
+var $__7 = undefined;
+try {
+  for (var $__3 = void 0,
+      $__2 = (allDepts)[Symbol.iterator](); !($__5 = ($__3 = $__2.next()).done); $__5 = true) {
+    var dept = $__3.value;
     {
-      dept = $__2.value;
-      {
-        console.log('Found department using for of loop: ' + dept);
-      }
+      console.log('Found department using for of loop: ' + dept);
+    }
+  }
+} catch ($__8) {
+  $__6 = true;
+  $__7 = $__8;
+} finally {
+  try {
+    if (!$__5 && $__2.return != null) {
+      $__2.return();
+    }
+  } finally {
+    if ($__6) {
+      throw $__7;
     }
   }
 }
