@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic ES6 Code Compilation in the Browser with Traceur</title>
+</head>
+<body>
+    <h1>Dynamic ES6 Code Compilation in the Browser with Traceur</h1>
+    <h3>Output from Logger Class:</h3>
+    <div id="output"></div>
+
+    <script src="../../js/libs/traceur.js"></script>
+    <script src="../../js/libs/traceur-bootstrap.js"></script>
+    <script>
+    traceur.options.experimental = true;
+    </script>
+    <script type="module">
+        class BaseLog {
+            constructor() {
+                this.logName = 'ES6Log';
+            }
+
+            log(msg) {
+                document.querySelector('#output').innerHTML = this.logName + ': ' + msg;
+            }
+        }
+
+        class Logger extends BaseLog {
+
+            constructor(logName) {
+                super(logName);
+            }
+
+            writeLine(msg) {
+                super.log(msg + '\r\n');
+            }
+        }
+
+        var logger = new Logger('MyLog');
+        logger.writeLine('Logging via ES6 classes!');
+    </script>
+</body>
+</html>

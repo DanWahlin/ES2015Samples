@@ -6,9 +6,9 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     plumber = require('gulp-plumber'),
-    es6Path = 'samples/*.js',
-    compilePath = 'samples/js',
-    dist = 'samples/js';
+    es6Path = './*.js',
+    compilePath = './js',
+    dist = './js';
 
 gulp.task('compressScripts', function () {
     gulp.src([

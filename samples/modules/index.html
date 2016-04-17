@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <base href="/" />
+    <title>Modules and Classes</title>
+    <script>
+        function log(msg) {
+            document.querySelector('#log').innerHTML += '<br />' + msg;
+            console.log(msg);
+        }
+    </script>
+</head>
+<body>
+    <h1>Modules and Classes</h1>
+    <h3>Car output</h3>
+    <div id="log"></div>
+
+  <script src="/node_modules/systemjs/dist/system.src.js"></script>
+  <script>
+    System.config({
+        transpiler: 'babel',
+        packages: {
+          js: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+    System.import('js/modules-classes-main')
+          .then(null, console.error.bind(console));
+  </script>
+</body>
+</html>

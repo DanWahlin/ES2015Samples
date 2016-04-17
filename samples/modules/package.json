@@ -1,7 +1,7 @@
 {
   "name": "es6-demos",
   "version": "1.0.0",
-  "description": "Used for JavaScript ES6 Demos",
+  "description": "Used for JavaScript ES6 Module Demos",
   "author": "Dan Wahlin",
   "dependencies": {
     "systemjs": "0.19.25"
@@ -11,7 +11,7 @@
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.0",
     "babel-preset-es2015": "^6.1.2",
-    "babel-plugin-transform-object-rest-spread": "^6.0.14",
+    "babel-plugin-transform-es2015-modules-systemjs": "^6.6.5",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-concat": "^2.6.0",
     "gulp-plumber": "^1.0.1",
