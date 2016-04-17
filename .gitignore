@@ -5,3 +5,4 @@ packages
 *.mdf
 *.ldf
 node_modules
+js/*.js
