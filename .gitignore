@@ -5,4 +5,5 @@ packages
 *.mdf
 *.ldf
 node_modules
-js/*.js
+samples/js/*.js
+samples/js/*.js.map
