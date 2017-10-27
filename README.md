@@ -1,7 +1,7 @@
-# ES6Samples
+# ES6/ES2015 Samples
 ==========
 
-A set of ECMAScript 6 examples as well as a Gulp file that converts them to ES5 using Traceur and/or Babel.
+A set of ECMAScript 2015 (also called ES6) examples as well as a Gulp file that converts them to ES5 using Babel.
 
 ## To run the samples:
 
