@@ -5,12 +5,12 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     plumber = require('gulp-plumber'),
-    es6Path = 'samples/*.js',
+    es2015Path = 'samples/*.js',
     compilePath = 'samples/js',
     dist = 'samples/js';
 
 gulp.task('compressScripts', function () {
-    gulp.src([
+    return gulp.src([
         compilePath + '/*.js'
     ])
         .pipe(plumber())
@@ -20,18 +20,18 @@ gulp.task('compressScripts', function () {
 });
 
 gulp.task('babel', function () {
-    gulp.src([es6Path])
+    return gulp.src([es2015Path])
         .pipe(plumber())
         .pipe(sourcemaps.init())
-        .pipe(babel())
+        .pipe(babel({
+			presets: ['@babel/env']
+		}))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(compilePath));
 });
 
 gulp.task('watch', function() {
-
-    gulp.watch([es6Path], ['babel']);
-
+    gulp.watch(es2015Path, gulp.series('babel'));
 });
 
-gulp.task('default', ['babel', 'watch', 'compressScripts']);
+gulp.task('default', gulp.series('babel', 'watch', 'compressScripts'));
