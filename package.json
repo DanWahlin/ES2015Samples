@@ -1,7 +1,7 @@
 {
-  "name": "es6-demos",
+  "name": "es2015-demos",
   "version": "1.0.0",
-  "description": "Used for JavaScript ES6 Demos",
+  "description": "Used for JavaScript ES2015 Demos",
   "author": "Dan Wahlin",
   "scripts": {
     "start": "lite-server"
