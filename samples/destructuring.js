@@ -5,7 +5,7 @@ var oldTotal = values[0],
 
 //New Way (Destructuring)
 var [total, tax] = [9.99, .50];
-var {total2, tax2} = {total:9.99, tax:.50};
+var {total: total2, tax: tax2} = {total:9.99, tax:.50};
 
 console.log('Destructuring an array.');
 console.log('Total: ' + total + ' Tax: ' + tax);
