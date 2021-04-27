@@ -67,8 +67,8 @@ console.log(val);
 
 //Add current set into a new one using value
 console.log('\n');
-var values = allDepts.values;
-var depts2 = new Set(allDepts);
+var values = allDepts.values();
+var depts2 = new Set(values);
 depts2.forEach(function(dept) {
     console.log('Iterating through depts2 values: ' + dept);
 });
