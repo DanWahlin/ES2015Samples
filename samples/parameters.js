@@ -7,7 +7,7 @@
     //The year parameter is a "default parameter"
     setDetails(make = 'No Make', model = 'No Model', year = this.currentYear(), ...accessories) {
         console.log(make + ' ' + model + ' ' + year);  
-        if (accessories) {
+        if (accessories.length) {
             for (var i = 0; i < accessories.length; i++) {
                 console.log('\n' + accessories[i]);
             }
